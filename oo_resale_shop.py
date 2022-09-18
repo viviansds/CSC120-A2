@@ -1,8 +1,7 @@
 from typing import Dict, Union, Optional
 from computer import Computer
 
-# itemID = 0
-# inventory : Dict[int, Dict[str, Union[str, int, bool]]] = {}
+
 # Import a few useful containers from the typing module
 
 
@@ -18,8 +17,7 @@ class ResaleShop:
     def buy(self,computer):
         global itemID
         self.itemID += 1 # increment itemID
-        # inventory[itemID].append(computer)
-        print(self.itemID)
+        # print(self.itemID)
         self.inventory[self.itemID] = computer
         return self.itemID
 
@@ -33,12 +31,7 @@ class ResaleShop:
         else:
             print("No inventory to display.")
 
-    # def update_price(item_id: int, new_price: int):
-    # if item_id in inventory:
-    #     inventory[item_id]["price"] = new_price
-    # else:
-    #     print("Item", item_id, "not found. Cannot update price.")
-    
+
     def refurbish_os(self,item_id: int, new_os: Optional[str]):
         if item_id in self.inventory:
             computer = self.inventory[item_id] # locate the computer

@@ -18,6 +18,7 @@ class Computer:
         self.operating_system = operating_system
         self.year_made =  year_made
         self.price = price
+    # What methods will you need?
     def create_computer(description: str,
                 processor_type: str,
                 hard_drive_capacity: int,
@@ -33,10 +34,4 @@ class Computer:
                 'year_made': year_made,
              'price': price
       }
-# new_computer=Computer.create_computer("Mac Pro (Late 2013)",
-#     "3.5 GHc 6-Core Intel Xeon E5",
-#     1024, 64,
-#     "macOS Big Sur", 2013, 1500)
-# print(new_computer)
 
-    # What methods will you need?
