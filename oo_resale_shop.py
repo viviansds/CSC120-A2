@@ -7,7 +7,6 @@ from computer import Computer
 
 class ResaleShop:
     # What attributes will it need?
-
     # How will you set up your constructor?
     # Remember: in python, all constructors have the same name (__init__)
     def __init__(self):
@@ -34,7 +33,6 @@ class ResaleShop:
 
     def refurbish_os(self,item_id: int, new_os: Optional[str]):
         if item_id in self.inventory:
-            computer = self.inventory[item_id] # locate the computer
             if self.inventory[item_id]['year_made'] < 2000:
                 self.inventory[item_id]['price'] = 0 # too old to sell, donation only
             elif self.inventory[self.item_id]['year_made'] < 2012:
@@ -42,7 +40,7 @@ class ResaleShop:
             elif self.inventory[self.item_id]['year_made'] < 2018:
                 self.inventory[item_id]['price'] = 550 # discounted price on machines 4-to-10 year old machines
             else:
-                computer[item_id]['price'] = 1000 # recent stuff
+                self.inventory[item_id]['price'] = 1000 # recent stuff
 
         if new_os is not None:
             self.inventory[item_id]['operating_system'] = new_os # update details after installing new OS
