@@ -11,31 +11,11 @@ from computer import Computer
     explicit data types (str, int, etc.) listed in a python function. We're 
     going to go the extra step, because when we get to Java it'll be required!
 """
-# def create_computer(description: str,
-#                     processor_type: str,
-#                     hard_drive_capacity: int,
-#                     memory: int,
-#                     operating_system: str,
-#                     year_made: int,
-#                     price: int):
-#     return {'description': description,
-#             'processor_type': processor_type,
-#             'hard_drive_capacity': hard_drive_capacity,
-#             'memory': memory,
-#             'operating_system': operating_system,
-#             'year_made': year_made,
-#             'price': price
-#     }
     
 def main():
     
     # First, let's make a computer
-    #computer = create_computer(
-     #   "Mac Pro (Late 2013)",
-     #   "3.5 GHc 6-Core Intel Xeon E5",
-      #  1024, 64,
-       # "macOS Big Sur", 2013, 1500
-    #)
+
     new_computer= Computer.create_computer("Mac Pro (Late 2013)",
     "3.5 GHc 6-Core Intel Xeon E5",
     1024, 64,
@@ -61,7 +41,7 @@ def main():
     new_OS = "MacOS Monterey"
     print("Refurbishing Item ID:", computer_id, ", updating OS to", new_OS)
     print("Updating inventory...")
-    ResaleShop.refurbish(shop,computer_id, new_OS)
+    ResaleShop.refurbish(shop,computer_id,new_OS)
     print("Done.\n")
 
     # Make sure it worked by checking inventory

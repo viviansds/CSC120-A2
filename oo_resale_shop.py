@@ -36,10 +36,11 @@ class ResaleShop:
             print("No inventory to display.")
 
 
-    def refurbish(self,item_id: int, new_os: Optional[str]): 
-        """ Takes in a instance of the class, a integer indicating the specific item_id and an optional string for the new_os.
-        Update a computer's price base on its year made and its operating system if given. 'item_id' is different from 
-        'itemID' because item itemID are incremented and only reflect the last item added to the inventory.
+    def refurbish(self,item_id: int, new_os: Optional[str]=None): 
+        """ Takes in a instance of the class, a integer indicating the specific item_id and an optional 
+        string for the new_os.Update a computer's price base on its year made and its operating system if 
+        given. 'item_id' is different from 'itemID' because item itemID are incremented and only reflect 
+        the last item added to the inventory.
         """
         if item_id in self.inventory:
             #access and modify a value in a nested dictionary form
