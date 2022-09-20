@@ -50,6 +50,16 @@ def main():
     shop.print_inventory()
     print("Done.\n")
     
+    #Update the price without automatically discout
+    print("Updating new price...")
+    shop.update_price(computer_id, 1000)
+    print("Done.\n")
+
+    # Make sure it worked by checking inventory
+    print("Checking inventory...")
+    shop.print_inventory()
+    print("Done.\n")
+    
     # Now, let's sell it!
     print("Selling Item ID:", computer_id)
     shop.sell(computer_id)

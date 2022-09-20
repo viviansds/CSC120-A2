@@ -3,8 +3,8 @@ from typing import Dict, Union, Optional
 """ This class file takes in an empty nested dictionary named inventory that 
     store information about the computer and its corresponding itemID.
 
-    ResaleShop have four functions: buy(), print_inventory(),refurbish(), 
-    and sell() that modifies the nested dictionary.
+    ResaleShop have five functions: buy(), print_inventory(),refurbish(), 
+    update_price(), and sell() that modifies the inventory.
 """
 class ResaleShop:
     # What attributes will it need?
@@ -60,6 +60,19 @@ class ResaleShop:
                     computer['operating_system'] = new_os # update details after installing new OS
         else:
             print("Item", item_id, "not found. Please select another item to refurbish.")
+
+
+    def update_price(self,item_id: int, new_price: int):
+        """This is a function that takes in an item_id and a new price, updates any arbitrary 
+        assigned price to a computer in the inventory, regardless of the year made. If it is not in the inventory, 
+        prints error message.
+        """
+         #check to see if the computer is in the inventory dictionary
+        if item_id in self.inventory:
+            #access and modifies a nested dictionary by assigning a new value for the key "price"
+            self.inventory[item_id]["price"] = new_price
+        else:
+            print("Item", item_id, "not found. Cannot update price.")
 
     def sell(self,item_id: int):
         """ Delete item in the dictionary by removing the key 'itemID'"""
