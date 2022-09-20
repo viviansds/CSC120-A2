@@ -1,5 +1,6 @@
 #Import a few useful containers from the typing module
 from calendar import c
+from distutils.command.build import show_compilers
 from typing import Dict, Union
 # Import class ResaleShop and Computer 
 from oo_resale_shop import ResaleShop
@@ -15,7 +16,6 @@ from computer import Computer
 def main():
     
     # First, let's make a computer
-
     new_computer= Computer.create_computer("Mac Pro (Late 2013)",
     "3.5 GHc 6-Core Intel Xeon E5",
     1024, 64,
@@ -24,38 +24,39 @@ def main():
     print("-" * 21)
     print("COMPUTER RESALE STORE")
     print("-" * 21)
+    #create instance of the class
     shop = ResaleShop()
 
     # Add it to the resale store's inventory
     print("Buying", new_computer["description"])
     print("Adding to inventory...")
-    computer_id = ResaleShop.buy(shop,new_computer)
+    computer_id = shop.buy(new_computer)
     print("Done.\n")
 
     # Make sure it worked by checking inventory
     print("Checking inventory...")
-    ResaleShop.print_inventory(shop)
+    shop.print_inventory()
     print("Done.\n")
 
     # Now, let's refurbish it
     new_OS = "MacOS Monterey"
     print("Refurbishing Item ID:", computer_id, ", updating OS to", new_OS)
     print("Updating inventory...")
-    ResaleShop.refurbish(shop,computer_id,new_OS)
+    shop.refurbish(computer_id,new_OS)
     print("Done.\n")
 
     # Make sure it worked by checking inventory
     print("Checking inventory...")
-    ResaleShop.print_inventory(shop)
+    shop.print_inventory()
     print("Done.\n")
     
     # Now, let's sell it!
     print("Selling Item ID:", computer_id)
-    ResaleShop.sell(shop,computer_id)
+    shop.sell(computer_id)
     
     # Make sure it worked by checking inventory
     print("Checking inventory...")
-    ResaleShop.print_inventory(shop)
+    shop.print_inventory()
     print("Done.\n")
 
 # Calls the main() function when this file is run
